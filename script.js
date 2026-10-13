@@ -1,43 +1,44 @@
 const accordionData = [
-    {
-        title: "01. Frontend Architecture Overview",
-        content: "This module handles foundational layout structures using pure HTML5 semantic elements and CSS Grid containers. It ensures high performance, zero external framework dependencies, and a fully modular design pattern that scales effortlessly across modern desktop and mobile browsers."
+    { 
+        title: "01. PixelForge Studios",
+        content: "We turn ambitious concepts into playable realities. Balancing cutting-edge engine architecture with meticulous environmental storytelling"
     },
     {
-        title: "02. Event Delegation & State Control",
-        content: "By leveraging vanilla JavaScript event listeners, this component tracks user interactions in real time. Clicking any down arrow updates global click counters, toggles active animation classes, and synchronizes state seamlessly with side panels without page reloads."
+        title: "02. Sprite & Script",
+        content: "Welcome to my digital workspace. As an independent game designer and developer, I handle everything from character logic to pixel positioning."
     },
     {
-        title: "03. Dynamic Timestamp Generator",
-        content: "Every single interaction triggers a precise local time calculation using the native JavaScript Date object. This timestamp is instantly bound to the DOM element, providing exact auditing and tracking data for every opened section."
+        title: "03. Engine & Element",
+        content: " Great games are built on robust frameworks. My work as a developer centers on writing clean, optimized systems."
+
     },
     {
-        title: "04. Scrollable Container Layout",
-        content: "Engineered with custom CSS overflow properties and sleek webkit scrollbars. This layout ensures users can comfortably navigate through multiple expandable items while maintaining a clean, fixed-height viewport aesthetic on the dashboard."
+        title: "04. Lanzo Game Designer, Worldbuilder & Programmer",
+        content: " I design, program, and iterate interactive experiences from initial concept to final polish. By bridging the gap between mechanical programming."
     },
     {
-        title: "05. Responsive Grid Systems",
-        content: "Built using fluid 3-column CSS Grid templates that automatically adapt to screen size variations. On smaller viewports or mobile devices, columns stack gracefully into a single unified feed without breaking alignment."
+        title: "05.  Neon Horizon Labs",
+        content: "Where mood meets mechanics. We specialize in developing stylized games that emphasize immersive atmosphere, striking visuals."
     },
     {
-        title: "06. Performance & Optimization",
-        content: "Optimized for maximum execution speed, utilizing hardware-accelerated CSS transitions for smooth height expansions and rotation effects. Memory consumption is kept exceptionally low through clean DOM node generation."
+        title: "06. The Glitch Arcade",
+        content: " Bringing the nostalgic charm of classic arcade games into the modern era."
     },
     {
-        title: "07. Advanced Security Protocols",
-        content: "Implements strict input sanitization, secure DOM property assignments, and cross-site scripting (XSS) prevention safeguards to ensure your frontend components remain completely safe against potential vulnerabilities."
+        title: "07. Core Loop Design",
+        content: "Every great game starts with a perfect feel. This space is dedicated to the art of prototyping and refining gameplay."
     },
     {
-        title: "08. Automated State Persistence",
+        title: "08. Lanzo Codes Games",
         content: "Tracks active components across user sessions, allowing dashboards to remember expanded drawer states, user click metrics, and historical logs automatically using client-side caching utilities."
     },
     {
-        title: "09. Accessibility & ARIA Support",
-        content: "Fully integrated with WAI-ARIA standards, utilizing dynamic aria-expanded attributes, keyboard navigability support, and high-contrast styling tokens for screen readers and accessibility compliance."
+        title: "09. Polygon Sandbox |",
+        content: "Pushing the boundaries of real-time 3D rendering and gameplay systems. Focused heavily on modern game engines."
     },
     {
-        title: "10. Scalable Deployment Pipelines",
-        content: "Structured for seamless integration with modern CI/CD workflows, Git version control systems, and automated build tools to guarantee reliable staging and production deployments."
+        title: "10. Syntax Game Labs",
+        content: "Elegant development solutions for modern gaming platforms. Specializing in cross-platform implementation."
     }
 ];
 
@@ -51,12 +52,10 @@ const collapseAllBtn = document.getElementById('collapseAllBtn');
 const resetBtn = document.getElementById('resetBtn');
 
 let totalClicks = 0;
-
-// 1. Dynamically render all 10 accordion items
 accordionData.forEach((item, index) => {
     const itemEl = document.createElement('div');
     itemEl.classList.add('accordion-item');
-    if (index === 0) itemEl.classList.add('active'); // Open first by default
+    if (index === 0) itemEl.classList.add('active'); 
 
     itemEl.innerHTML = `
         <button class="accordion-header" aria-expanded="${index === 0}">
@@ -81,7 +80,6 @@ function updateActiveCount() {
     activeCountEl.textContent = `${activeItems} / ${accordionItems.length}`;
 }
 
-// Helper to set correct dynamic height via JavaScript scrollHeight
 function setAccordionHeight(item, isOpen) {
     const body = item.querySelector('.accordion-body');
     if (isOpen) {
@@ -93,7 +91,6 @@ function setAccordionHeight(item, isOpen) {
     }
 }
 
-// Initialize first item's open height on load
 const firstBody = accordionItems[0].querySelector('.accordion-body');
 firstBody.style.maxHeight = firstBody.scrollHeight + 30 + 'px';
 firstBody.style.paddingBottom = '18px';
@@ -110,8 +107,6 @@ function logActivity(text) {
     
     activityFeed.prepend(li);
 }
-
-// 2. Accordion click handlers with dynamic height calculation
 accordionItems.forEach((item, index) => {
     const header = item.querySelector('.accordion-header');
     const timestampSpan = item.querySelector('.timestamp');
@@ -135,13 +130,12 @@ accordionItems.forEach((item, index) => {
             
             totalClicks++;
             clickCounterEl.textContent = `Clicks: ${totalClicks}`;
-            logActivity(`Expanded module #${index + 1}`);
+            logActivity(`Expanded Page #${index + 1}`);
         }
         updateActiveCount();
     });
 });
 
-// 3. Control Actions
 expandAllBtn.addEventListener('click', () => {
     accordionItems.forEach(item => {
         item.classList.add('active');
@@ -151,7 +145,7 @@ expandAllBtn.addEventListener('click', () => {
         setAccordionHeight(item, true);
     });
     updateActiveCount();
-    logActivity('Expanded all modules');
+    logActivity('Expanded all Pages');
 });
 
 collapseAllBtn.addEventListener('click', () => {
@@ -161,7 +155,7 @@ collapseAllBtn.addEventListener('click', () => {
         setAccordionHeight(item, false);
     });
     updateActiveCount();
-    logActivity('Collapsed all modules');
+    logActivity('Collapsed all Pages');
 });
 
 resetBtn.addEventListener('click', () => {

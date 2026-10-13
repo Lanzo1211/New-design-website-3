@@ -3,12 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mesh Gradient UI</title>
+    <title>welcome</title>
 </head>
 <body>
 <div class="app-container">
-    
-    <!-- LEFT SIDEBAR: Control Panel -->
     <aside class="sidebar left-sidebar">
         <div class="panel-header">
             <h3>Controls</h3>
@@ -19,39 +17,32 @@
             <button class="action-btn reset-btn" id="resetBtn">Reset Stats</button>
         </div>
         <div class="stat-box">
-            <span class="stat-label">Active Modules</span>
+            <span class="stat-label">Active pages</span>
             <span class="stat-value" id="activeCount">1 / 10</span>
         </div>
     </aside>
-
-    <!-- CENTER PANEL: Big Scrollable Interactive Modules & Bottom Logos -->
     <main class="main-content">
         <div class="dashboard-header">
-            <h2>Interactive Modules</h2>
+            <h2>Game Design & Development</h2>
             <span class="badge" id="clickCounter">Clicks: 0</span>
         </div>
         
-        <!-- Big Scrollable Container holding all 10 items -->
         <div class="accordion-container" id="accordionContainer"></div>
-
-        <!-- Bottom Logo / Brand Badges Section -->
-        <div class="dashboard-footer-logos">
-            <div class="brand-logo">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
-                <span>HTML5 / CSS3</span>
-            </div>
-            <div class="brand-logo">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
-                <span>JavaScript</span>
-            </div>
-            <div class="brand-logo">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg>
-                <span>Git Version</span>
-            </div>
+        <div class="dashboard-footer-logo">
+            <a href="https://lanzo.com" target="_blank" class="lanzo-brand">
+                <div class="brand-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                        <polyline points="2 17 12 22 22 17"></polyline>
+                        <polyline points="2 12 12 17 22 12"></polyline>
+                    </svg>
+                </div>
+                <div class="brand-text">
+                    <span class="brand-name">Lanzo<span class="domain">.com</span></span>
+                </div>
+            </a>
         </div>
     </main>
-
-    <!-- RIGHT SIDEBAR: Live Activity Feed -->
     <aside class="sidebar right-sidebar">
         <div class="panel-header">
             <h3>Activity Log</h3>

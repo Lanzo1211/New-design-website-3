@@ -14,8 +14,6 @@ body {
     align-items: center;
     padding: 20px;
 }
-
-/* 3-Column Layout Container */
 .app-container {
     display: grid;
     grid-template-columns: 260px 480px 280px;
@@ -24,8 +22,6 @@ body {
     max-width: 1060px;
     align-items: start;
 }
-
-/* Sidebar & Main Card Base Styling */
 .sidebar, .main-content {
     background: rgba(30, 41, 59, 0.7);
     backdrop-filter: blur(16px);
@@ -49,8 +45,6 @@ body {
     font-weight: 600;
     color: #cbd5e1;
 }
-
-/* Left Sidebar Controls */
 .control-buttons {
     display: flex;
     flex-direction: column;
@@ -104,7 +98,6 @@ body {
     color: #818cf8;
 }
 
-/* Center Main Dashboard */
 .dashboard-header {
     display: flex;
     justify-content: space-between;
@@ -126,10 +119,8 @@ body {
     font-weight: 600;
     border: 1px solid rgba(129, 140, 248, 0.3);
 }
-
-/* MASSIVE Scrollable Container holding all 10 modules */
 .accordion-container {
-    max-height: 600px;
+    max-height: 560px;
     overflow-y: auto;
     padding-right: 6px;
     display: flex;
@@ -155,41 +146,68 @@ body {
     background: rgba(129, 140, 248, 0.6);
 }
 
-/* Bottom Logo / Brand Section */
-.dashboard-footer-logos {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 20px;
-    padding-top: 16px;
+.dashboard-footer-logo {
+    margin-top: 18px;
+    padding-top: 14px;
     border-top: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex;
+    justify-content: center;
+     pointer-events: none;
+    user-select: none; 
+    -webkit-user-drag: none; 
 }
-
-.brand-logo {
+.lanzo-brand {
     display: flex;
     align-items: center;
-    gap: 8px;
-    background: rgba(15, 23, 42, 0.5);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    padding: 8px 12px;
-    border-radius: 12px;
-    font-size: 11px;
-    font-weight: 600;
-    color: #94a3b8;
-    transition: all 0.2s ease;
+    gap: 12px;
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid rgba(129, 140, 248, 0.2);
+    padding: 10px 20px;
+    border-radius: 16px;
+    text-decoration: none;
+    transition: all 0.3s ease;
 }
 
-.brand-logo:hover {
-    background: rgba(129, 140, 248, 0.1);
-    border-color: rgba(129, 140, 248, 0.3);
+.lanzo-brand:hover {
+    background: rgba(129, 140, 248, 0.12);
+    border-color: rgba(129, 140, 248, 0.5);
+    box-shadow: 0 0 20px rgba(129, 140, 248, 0.15);
+    transform: translateY(-2px);
+}
+
+.brand-icon {
+    width: 36px;
+    height: 36px;
+    background: rgba(129, 140, 248, 0.15);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     color: #818cf8;
 }
 
-.brand-logo svg {
-    stroke: #818cf8;
+.brand-text {
+    display: flex;
+    flex-direction: column;
+    pointer-events: none;
 }
 
-/* Accordion Item Styling */
+.brand-name {
+    font-size: 15px;
+    font-weight: 700;
+    color: #f8fafc;
+    letter-spacing: -0.01em;
+}
+
+.brand-name .domain {
+    color: #818cf8;
+}
+
+.brand-tagline {
+    font-size: 11px;
+    color: #94a3b8;
+}
+
 .accordion-item {
     background: rgba(15, 23, 42, 0.6);
     border: 1px solid rgba(255, 255, 255, 0.05);
@@ -233,8 +251,6 @@ body {
     transform: rotate(180deg);
     stroke: #818cf8;
 }
-
-/* Fully dynamic height handling via JavaScript */
 .accordion-body {
     max-height: 0px;
     overflow: hidden;
@@ -259,7 +275,7 @@ body {
     padding-top: 6px;
 }
 
-/* Right Sidebar Activity Feed */
+
 .live-dot {
     width: 8px;
     height: 8px;
