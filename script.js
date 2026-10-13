@@ -10,14 +10,13 @@ const accordionData = [
     {
         title: "03. Engine & Element",
         content: " Great games are built on robust frameworks. My work as a developer centers on writing clean, optimized systems."
-
     },
     {
         title: "04. Lanzo Game Designer, Worldbuilder & Programmer",
         content: " I design, program, and iterate interactive experiences from initial concept to final polish. By bridging the gap between mechanical programming."
     },
     {
-        title: "05.  Neon Horizon Labs",
+        title: "05. Neon Horizon Labs",
         content: "Where mood meets mechanics. We specialize in developing stylized games that emphasize immersive atmosphere, striking visuals."
     },
     {
@@ -52,6 +51,8 @@ const collapseAllBtn = document.getElementById('collapseAllBtn');
 const resetBtn = document.getElementById('resetBtn');
 
 let totalClicks = 0;
+
+// 1. Dynamically render accordion items
 accordionData.forEach((item, index) => {
     const itemEl = document.createElement('div');
     itemEl.classList.add('accordion-item');
@@ -80,10 +81,11 @@ function updateActiveCount() {
     activeCountEl.textContent = `${activeItems} / ${accordionItems.length}`;
 }
 
+// Improved height calculation function with a safety buffer
 function setAccordionHeight(item, isOpen) {
     const body = item.querySelector('.accordion-body');
     if (isOpen) {
-        body.style.maxHeight = body.scrollHeight + 30 + 'px';
+        body.style.maxHeight = (body.scrollHeight + 40) + 'px';
         body.style.paddingBottom = '18px';
     } else {
         body.style.maxHeight = '0px';
@@ -91,8 +93,9 @@ function setAccordionHeight(item, isOpen) {
     }
 }
 
+// Initialize first item open height on load
 const firstBody = accordionItems[0].querySelector('.accordion-body');
-firstBody.style.maxHeight = firstBody.scrollHeight + 30 + 'px';
+firstBody.style.maxHeight = (firstBody.scrollHeight + 40) + 'px';
 firstBody.style.paddingBottom = '18px';
 updateActiveCount();
 
@@ -107,6 +110,8 @@ function logActivity(text) {
     
     activityFeed.prepend(li);
 }
+
+// 2. Click handlers with slight delay to ensure accurate scrollHeight rendering
 accordionItems.forEach((item, index) => {
     const header = item.querySelector('.accordion-header');
     const timestampSpan = item.querySelector('.timestamp');
@@ -128,6 +133,9 @@ accordionItems.forEach((item, index) => {
             
             setAccordionHeight(item, true);
             
+            // Re-calculate slightly after to prevent layout jumps when opening multiple items
+            setTimeout(() => setAccordionHeight(item, true), 50);
+
             totalClicks++;
             clickCounterEl.textContent = `Clicks: ${totalClicks}`;
             logActivity(`Expanded Page #${index + 1}`);
